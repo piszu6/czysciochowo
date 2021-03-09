@@ -1,0 +1,17 @@
+<div class="kindergarten-list">
+  <div class="kindergarten-list-container">
+    <table>
+      <tr
+        *ngFor="let kindergarten of kindergartens; index as i"
+        [ngClass]="{
+        'kindergarten--highlighted': kindergarten.applicationId == 1702
+      }">
+        <td>{{ i + 1 }}</td>
+        <td>{{ kindergarten.facility.facilityName }}</td>
+        <td>{{ kindergarten.facility.facilityCity }}</td>
+        <td
+        >{{ kindergarten.votes }}</td>
+      </tr>
+    </table>
+  </div>
+</div>
