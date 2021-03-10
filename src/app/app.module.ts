@@ -4,15 +4,19 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {KindergartenListComponent} from './kindergarten-list/kindergarten-list.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {SummaryComponent} from './summary/summary.component';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
-    KindergartenListComponent
+    KindergartenListComponent,
+    SummaryComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
   ],
   providers: [
     HttpClient

@@ -1,6 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {ApiService} from '../api.service';
-import {Kindergarten, KindergartenResponse} from '../model/Kindergarten';
+import {Component, Input, OnInit} from '@angular/core';
+import {Kindergarten} from '../model/Kindergarten';
 
 @Component({
   selector: 'app-kindergarten-list',
@@ -9,21 +8,12 @@ import {Kindergarten, KindergartenResponse} from '../model/Kindergarten';
 })
 export class KindergartenListComponent implements OnInit {
 
-  public kindergartens: Kindergarten[];
+  @Input() public kindergartens: Kindergarten[];
 
-  public constructor(
-    private apiService: ApiService
-  ) {
+  public constructor() {
   }
 
   public ngOnInit(): void {
-    this.init();
-  }
-
-  private init(): void {
-    this.apiService.getData().subscribe((response: KindergartenResponse) => {
-      this.kindergartens = response.applications;
-    });
   }
 
 }

@@ -10,4 +10,5 @@ export interface Kindergarten {
     facilityName: string;
   };
   votes: number;
+  position?: number;
 }
