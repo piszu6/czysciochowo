@@ -40,7 +40,7 @@ export class AppComponent {
 
   private analyse(): void {
     this.analysisResult = {};
-    this.analysisResult.position = this.kindergartens.findIndex((kindergarten: Kindergarten) => +kindergarten.applicationId === 1702);
+    this.analysisResult.position = this.kindergartens.find((kindergarten: Kindergarten) => +kindergarten.applicationId === 1702).position;
     if (this.kindergartens.length >= 100) {
       if (this.analysisResult.position > 100) {
         this.analysisResult.missingTo100 = this.kindergartens[99].votes - this.kindergartens[this.analysisResult.position].votes;
