@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {AnalysisResult} from '../app.component';
 
 @Component({
@@ -6,7 +6,7 @@ import {AnalysisResult} from '../app.component';
   templateUrl: './summary.component.html',
   styleUrls: ['./summary.component.css']
 })
-export class SummaryComponent implements OnInit, OnChanges {
+export class SummaryComponent implements OnInit {
 
   @Input() public analysisResult: AnalysisResult;
 
@@ -14,10 +14,6 @@ export class SummaryComponent implements OnInit, OnChanges {
   }
 
   public ngOnInit(): void {
-  }
-
-  public ngOnChanges(): void {
-    console.log(this.analysisResult);
   }
 
 }

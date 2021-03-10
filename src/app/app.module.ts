@@ -6,12 +6,14 @@ import {KindergartenListComponent} from './kindergarten-list/kindergarten-list.c
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {SummaryComponent} from './summary/summary.component';
 import {CommonModule} from '@angular/common';
+import { VotesPipe } from './votes.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     KindergartenListComponent,
-    SummaryComponent
+    SummaryComponent,
+    VotesPipe
   ],
   imports: [
     BrowserModule,

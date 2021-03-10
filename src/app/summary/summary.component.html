@@ -1,6 +1,7 @@
 <div *ngIf="analysisResult" class="summary-container">
   <div *ngIf="analysisResult.position > 100" class="summary-under100">
-    Pozycja <strong>{{ analysisResult.position }}</strong>, do <strong>100</strong> miejsca brakuje <strong>{{ analysisResult.missingTo100 }}</strong>
+    Pozycja <strong>{{ analysisResult.position }}</strong>, do <strong>100</strong> miejsca brakuje
+    <strong>{{ analysisResult.missingTo100 }}</strong> {{ analysisResult.missingTo100 | votes }}
   </div>
 
   <div *ngIf="analysisResult.position <= 100" class="summary-over100">
