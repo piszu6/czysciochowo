@@ -3,9 +3,10 @@ import {Kindergarten, KindergartenResponse} from './model/Kindergarten';
 import {ApiService} from './api.service';
 
 export interface AnalysisResult {
-  position?: number;
   missingTo100?: number;
   over100?: number;
+  position?: number;
+  votes?: number;
 }
 
 @Component({
@@ -39,11 +40,13 @@ export class AppComponent {
   }
 
   private analyse(): void {
+    const cogito = this.kindergartens.find((kindergarten: Kindergarten) => +kindergarten.applicationId === 1702);
     this.analysisResult = {};
-    this.analysisResult.position = this.kindergartens.find((kindergarten: Kindergarten) => +kindergarten.applicationId === 1702).position;
+    this.analysisResult.position = cogito.position;
+    this.analysisResult.votes = cogito.votes;
     if (this.kindergartens.length >= 100) {
       if (this.analysisResult.position > 100) {
-        this.analysisResult.missingTo100 = this.kindergartens[99].votes - this.kindergartens[this.analysisResult.position].votes;
+        this.analysisResult.missingTo100 = this.kindergartens[99].votes - this.analysisResult.votes;
       } else {
         this.analysisResult.over100 = this.kindergartens[this.analysisResult.position].votes - this.kindergartens[99].votes;
       }
