@@ -40,7 +40,7 @@ export class AppComponent {
   }
 
   private analyse(): void {
-    const cogito = this.kindergartens.find((kindergarten: Kindergarten) => +kindergarten.applicationId === 1702);
+    const cogito = this.kindergartens.find((kindergarten: Kindergarten) => +kindergarten.applicationId === 2240);
     this.analysisResult = {};
     this.analysisResult.position = cogito.position;
     this.analysisResult.votes = cogito.votes;
