@@ -12,3 +12,13 @@
   margin-top: 16px;
   margin-bottom: 16px;
 }
+
+.summary-container-voteLink {
+  text-decoration: none;
+  color: black;
+}
+
+.summary-container-voteLink:hover {
+  cursor: pointer;
+  color: black;
+}
